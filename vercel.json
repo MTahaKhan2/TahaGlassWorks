@@ -1,5 +1,5 @@
 {
-  "installCommand": "npm install && npm install --include=dev --prefix client",
-  "buildCommand": "npm run build --prefix client",
+  "installCommand": "[ -d client ] || cd ..; npm install && npm install --include=dev --prefix client",
+  "buildCommand": "[ -d client ] || cd ..; npm run build --prefix client",
   "outputDirectory": "client/dist"
 }
