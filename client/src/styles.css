@@ -78,11 +78,17 @@ footer .title em{color:#4a78c4}
 .err{color:#b3261e;font-size:13px;font-weight:500}.hp{position:absolute;left:-9999px}
 .x{position:absolute;top:14px;right:14px;border:0;background:#f1f1f1;border-radius:50%;width:36px;height:36px;display:grid;place-items:center;cursor:pointer}
 .done{display:grid;gap:14px;justify-items:start;padding-top:12px}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.quote{margin:0;border:1px solid var(--line);background:#fafafa;border-radius:10px;padding:clamp(20px,2.2vw,32px);display:flex;flex-direction:column;gap:20px;justify-content:space-between;min-height:260px;color:var(--ink)}
+.quote svg{color:var(--navy);opacity:.9}
+.quote blockquote{margin:0;font-size:clamp(17px,1.5vw,20px);font-weight:300;line-height:1.45}
+.quote figcaption{display:grid;gap:2px;font-size:14px}.quote figcaption strong{font-weight:700;font-size:16px}.quote figcaption span{color:var(--mute)}
+.quote-on{background:var(--navy);color:#fff;border-color:var(--navy)}.quote-on svg{color:#fff}.quote-on figcaption span{color:#c9d4ea}
 @media(max-width:900px){
  .nav nav{display:none}
  .split,.head,.contact,.info{grid-template-columns:1fr}
  .bento{grid-template-columns:1fr 1fr}.c-craft,.c-qual{grid-column:span 2}.c-craft{grid-row:span 1;min-height:360px}
- .stats{grid-template-columns:1fr}
+ .stats,.quotes{grid-template-columns:1fr}
  .fgrid{grid-template-columns:1fr 1fr}.cta .btn{justify-self:start}
 }
 @media(max-width:520px){.bento{grid-template-columns:1fr}.c-craft,.c-qual{grid-column:auto}.logo{height:38px}}

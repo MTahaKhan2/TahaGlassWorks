@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowUpRight, Instagram, Facebook, Close } from './Icons.jsx';
+import { ArrowUpRight, Instagram, Facebook, Close, Quote } from './Icons.jsx';
+import { TESTIMONIALS } from './testimonials.js';
 import logo from './assets/Logo.svg';
 import logoWhite from './assets/Logo-white.svg';
 import waIcon from './assets/whatsapp.svg';
@@ -146,6 +147,21 @@ export default function App() {
           </div>
           <div className="center"><a className="btn" href={`${site.whatsapp}?text=${encodeURIComponent('Hi, I would like to see more of your projects.')}`} target="_blank" rel="noreferrer">View All Projects</a></div>
         </section>
+
+        {TESTIMONIALS.length > 0 && (
+          <section id="testimonials" className="wrap">
+            <div className="head"><h2 className="title">What our <em>clients</em> say</h2><p>Real feedback from homeowners and businesses we have worked with.</p></div>
+            <div className="quotes">
+              {TESTIMONIALS.map((t, i) => (
+                <figure key={i} className={`quote ${i === 0 ? 'quote-on' : ''}`}>
+                  <Quote />
+                  <blockquote>{t.quote}</blockquote>
+                  <figcaption><strong>{t.name}</strong>{t.detail && <span>{t.detail}</span>}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </section>
+        )}
 
         <section id="materials" className="wrap split">
           <Label>Quality Materials We Choose</Label>
